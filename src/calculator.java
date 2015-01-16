@@ -1,38 +1,34 @@
 public class calculator {
 	
-	public static double gammaSpread(int distance){
-		return (Double) null;
+	public static double gammaSpread(double distance){
+		return distance;
 	}
 	
-	public static double neutronSpread(int distance){
-		return (Double) null;
+	public static double neutronSpread(double distance){
+		return distance;
 	}
 	
-	public static double thermalSpread(int distance){
-		return (Double) null;
+	public static double thermalSpread(double distance){
+		return distance;
 	}
 	
-	public static double falloutSpread(int distance){
-		return (Double) null;
+	public static double falloutSpread(double distance){
+		return distance;
 	}
 	
-	public static double EMPSpread(int distance){
-		return (Double) null;
+	public static double EMPSpread(double distance){
+		return distance;
 	}
 	
-	public static double groundshockSpread(int distance){
-		return (Double) null;
+	public static double groundshockSpread(double distance){
+		return distance;
 	}
 	
-	public static double overpressureSpread(int distance){
-		return (Double) null;
+	public static double overpressureSpread(double distance){
+		return distance;
 	}
 	
-	public static double cratorSpread2(int distance){
-		return (Double) null;
-	}
-	
-	public static double cratorSpread1(int distance){
+	public static double cratorSpread(){
 		return (Double) null;
 	}
 }

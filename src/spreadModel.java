@@ -58,20 +58,42 @@ public class spreadModel{
 		//Close the scanner (Memory leak otherwise)
 		input.close();
 		
-		for(int x=0; x<1000; x++){
+		//Calculate all the spreads
+		for(int x=0; x<memUse; x++){
+			double distance = (1 / resolution) * x;
+			
+			//All output in meters
+			gammaSpread[x] = calculator.gammaSpread(distance);
+			neutronSpread[x] = calculator.neutronSpread(distance);
+			thermalSpread[x] = calculator.thermalSpread(distance);
 		}
 		
-		frame();
+		aniFrame();
+		controlFrame();
 	}
 	
 	//Drawing up the frames and stuff
-	  private static void frame() {
-		  int width = 800;
-		  int height = 450;
-		  JFrame aWindow = new JFrame("Explosion Spread Model");
-		  int windowWidth = width;           // Window width in pixels
-		  int windowHeight = height;          // Window height in pixels
+	  private static void aniFrame() {
+		  JFrame aWindow = new JFrame("Explosion Spread Model - Animation "); //Create the window and it's title!
+		  int windowWidth = 800;           // Window width in pixels
+		  int windowHeight = 450;          // Window height in pixels
 		  aWindow.setBounds(50, 100,       // Set position
+		  windowWidth, windowHeight);  // and size
+		  
+		  JLabel textLabel = new JLabel("Nulcear Model",SwingConstants.CENTER); 
+		  textLabel.setPreferredSize(new Dimension(300, 100));
+		  aWindow.getContentPane().add(textLabel, BorderLayout.CENTER);
+		  
+		  aWindow.setLocationRelativeTo(null);
+		  aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		  aWindow.setVisible(true);        // Display the window
+		 }
+	  
+	  private static void controlFrame() {
+		  JFrame aWindow = new JFrame("Explosion Spread Model - Controls"); //Create the window and it's title!
+		  int windowWidth = 450;           // Window width in pixels
+		  int windowHeight = 450;          // Window height in pixels
+		  aWindow.setBounds(50, 300,       // Set position
 		  windowWidth, windowHeight);  // and size
 		  aWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		  aWindow.setVisible(true);        // Display the window

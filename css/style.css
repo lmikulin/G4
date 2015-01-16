@@ -1,0 +1,14 @@
+h1 {
+	text-align: center;
+}
+
+body{
+	width: 100%;
+	text-align: center; 
+	margin: auto;
+}
+
+canvas {
+	border: 5px solid #000000;
+	border-style: double;
+}

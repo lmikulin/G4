@@ -18,7 +18,34 @@
     </header>
 
     <div class="body">
-      <p>HTML 5 Canvas</p>
+      <canvas id="nukeCanvas" width="600" height="200"></canvas>
+      <script>
+        var canvas = document.getElementById('nukeCanvas');
+        var context = canvas.getContext('2d');
+
+        // do cool things with the context
+        context.font = '40pt Calibri';
+        context.fillStyle = 'blue';
+        context.fillText('Hello World!', 150, 100);
+
+        //Drawing Line 1
+        context.beginPath();
+        context.moveTo(100, 150);
+        context.lineTo(450, 50);
+        context.lineWidth = 15;
+        context.strokeStyle = '#ff0000';
+        context.lineCap = 'round';
+        context.stroke();
+
+        //Drawing Line 2
+        context.beginPath();
+        context.moveTo(10, 100);
+        context.lineTo(150 + 300, 100);
+        context.lineWidth = 15;
+        context.strokeStyle = '#ff0000';
+        context.lineCap = 'round';
+        context.stroke();
+      </script>
     </div>
     
     <footer>

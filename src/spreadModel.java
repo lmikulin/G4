@@ -10,6 +10,8 @@ public class spreadModel{
 	 * For G4 Project
 	 */
 	
+	//Radiation shall be measured in Gray
+	
 	public static void main(String[] args) {
 		//Declare scanner, for input
 		Scanner input = new Scanner(System.in);
@@ -58,14 +60,16 @@ public class spreadModel{
 		//Close the scanner (Memory leak otherwise)
 		input.close();
 		
+		double sourceIntensity = headSize * headType;
+		
 		//Calculate all the spreads
 		for(int x=0; x<memUse; x++){
 			double distance = (1 / resolution) * x;
 			
 			//All output in meters
-			gammaSpread[x] = calculator.gammaSpread(distance);
-			neutronSpread[x] = calculator.neutronSpread(distance);
-			thermalSpread[x] = calculator.thermalSpread(distance);
+			gammaSpread[x] = calculator.gammaSpread(distance, sourceIntensity);
+			neutronSpread[x] = calculator.neutronSpread(distance, sourceIntensity);
+			thermalSpread[x] = calculator.thermalSpread(distance, sourceIntensity);
 		}
 		
 		aniFrame();

@@ -1,14 +1,16 @@
 public class calculator {
 	
-	public static double gammaSpread(double distance){
-		return distance;
+	public static double gammaSpread(double distance, double intensity){
+		double intense = intensity / Math.pow(distance,2); 
+		return intense;
 	}
 	
-	public static double neutronSpread(double distance){
-		return distance;
+	public static double neutronSpread(double distance, double intensity){
+		double intense = intensity / Math.pow(distance,2); 
+		return intense;
 	}
 	
-	public static double thermalSpread(double distance){
+	public static double thermalSpread(double distance, double intensity){
 		return distance;
 	}
 	

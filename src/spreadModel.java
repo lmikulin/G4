@@ -29,6 +29,7 @@ public class spreadModel {
 		double[] overpressureSpread = new double[1000];
 		double[][] cratorSpread = new double[1000][1000];
 		
+		//Gather Information from the user
 		System.out.println("Eris TM Nuclear Warhead Spread & Crater Models");
 		System.out.println("");
 		
@@ -44,8 +45,10 @@ public class spreadModel {
 		System.out.println("Type of terrain you wish to be modeled? (1.Mountains 2.Plains 3.Hills)");
 		terrain = input.nextInt();
 		
+		//Close the scanner (Memory leak otherwise)
 		input.close();
 		
+		//Start computing the explosion (Move to separate class eventually
 		for(int x=0; x<1000; x++){
 			double y = x;
 			gammaSpread[x] = java.lang.Math.pow(headSize, y);

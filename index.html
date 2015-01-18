@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- Created By Eric Mikulin-->
+<!-- Created By Eric Mikulin -->
 
 <html lang="en">
   <head>
@@ -9,47 +9,48 @@
     <title>Nuke Model</title>
 
     <link rel="stylesheet" href="css/style.css">
+
   </head>
 
   <body>
+    <script src="js/nukeCanvas.js"></script>
 
     <header>
       <h1> Nuclear Warhead Blast Model </h1>
     </header>
 
-    <div class="body">
-      <canvas id="nukeCanvas" width="900" height="450"></canvas>
-      <script>
-        var canvas = document.getElementById('nukeCanvas');
-        var context = canvas.getContext('2d');
+    <div class="wrapper">
 
-        // do cool things with the context
-        context.font = '40pt Calibri';
-        context.fillStyle = 'blue';
-        context.fillText('Hello World!', 150, 100);
+      <div class="input">
+        <h3>Warhead Size</h3>
+        <p>Default: 10 megaTons</p>
+        <input type="text" id="size"></input>
+      </div>
 
-        //Drawing Line 1
-        context.beginPath();
-        context.moveTo(100, 150);
-        context.lineTo(450, 50);
-        context.lineWidth = 15;
-        context.strokeStyle = '#ff0000';
-        context.lineCap = 'round';
-        context.stroke();
+      <div class="input">
+        <h3>Warhead Type</h3>
+        <p>Default: Nuclear</p>
+        <input type="text" id="type"></input>
+      </div>
 
-        //Drawing Line 2
-        context.beginPath();
-        context.moveTo(10, 100);
-        context.lineTo(150 + 300, 100);
-        context.lineWidth = 15;
-        context.strokeStyle = '#ff0000';
-        context.lineCap = 'round';
-        context.stroke();
-      </script>
+      <div class="input">
+        <h3>Distance</h3>
+        <p>Default: 100km</p>
+        <input type="text" id="range"></input>
+      </div>
+
+      <div id="buttons">
+        <input type="button" value="Reset" onClick="window.location.href=window.location.href"/>
+        <input type="button" value="Compute that!" onclick="draw();"/>
+      </div>
     </div>
+
+    <canvas id="nukeCanvas" width="900" height="450"></canvas>
     
     <footer>
+      <p> Created by Eric Mikulin for the IB G4 Project </p>
     </footer>
 
-    </body>
+  </body>
+
 </html>

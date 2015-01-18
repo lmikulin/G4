@@ -10,13 +10,12 @@
 
 ## Features
 ### Implemented
-- None
+- Promt user information
+- Control Buttons
 
 ### To-Do
 - Display information
-- Promt user information
 - Aninimate the stuff
-- Control Buttons
 
 ## Credits
 Created by *Eric Mikulin* for the *IB G4 Project*
